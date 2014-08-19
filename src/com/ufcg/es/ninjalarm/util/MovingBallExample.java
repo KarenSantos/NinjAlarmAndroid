@@ -24,7 +24,7 @@ public class MovingBallExample extends SimpleBaseGameActivity {
 	private static final int CAMERA_WIDTH = 720;
 	private static final int CAMERA_HEIGHT = 480;
 
-	private static final float DEMO_VELOCITY = 200.0f;
+	private static float DEMO_VELOCITY = 200.0f;
 
 	// ===========================================================
 	// Fields
@@ -111,5 +111,10 @@ public class MovingBallExample extends SimpleBaseGameActivity {
 
 			super.onManagedUpdate(pSecondsElapsed);
 		}
+	}
+
+	public static  void setVelocity(float buttonVelocity) {
+		DEMO_VELOCITY = buttonVelocity;
+		
 	}
 }

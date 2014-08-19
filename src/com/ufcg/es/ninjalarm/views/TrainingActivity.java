@@ -30,6 +30,7 @@ public class TrainingActivity extends Activity {
 			public void onClick(View v) {
 				Intent trainingIntent = new Intent(TrainingActivity.this,
 						MovingBallExample.class);
+				MovingBallExample.setVelocity(200);
 				Log.d("NewAlarm", "criou intent normal");
 				startActivity(trainingIntent);
 			}
@@ -42,6 +43,7 @@ public class TrainingActivity extends Activity {
 			public void onClick(View v) {
 				Intent trainingIntent = new Intent(TrainingActivity.this,
 						MovingBallExample.class);
+				MovingBallExample.setVelocity(400);
 				startActivity(trainingIntent);
 				
 			}
@@ -54,6 +56,7 @@ public class TrainingActivity extends Activity {
 			public void onClick(View v) {
 				Intent trainingIntent = new Intent(TrainingActivity.this,
 						MovingBallExample.class);
+				MovingBallExample.setVelocity(500);
 				startActivity(trainingIntent);
 				
 			}
