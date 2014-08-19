@@ -6,33 +6,34 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
-
+    tools:context="com.ufcg.es.ninjalarm.views.TrainingActivity" >
+    
     <Button
-        android:id="@+id/btnMyAlarms"
+        android:id="@+id/btnNormal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnTraining"
-        android:layout_alignLeft="@+id/btnTraining"
-        android:layout_alignRight="@+id/btnTraining"
-        android:text="@string/myAlarms" />
+        android:layout_above="@+id/btnHard"
+        android:layout_alignLeft="@+id/btnHard"
+        android:layout_alignRight="@+id/btnHard"
+        android:text="@string/btnNormal" />
 
     <Button
-        android:id="@+id/btnTraining"
+        android:id="@+id/btnHard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:text="@string/training" />
+        android:text="@string/btnHard" />
 
     <Button
-        android:id="@+id/btnRanking"
+        android:id="@+id/btnNinja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnTraining"
-        android:layout_alignRight="@+id/btnTraining"
-        android:layout_below="@+id/btnTraining"
-        android:text="@string/ranking" />
-        
+        android:layout_alignLeft="@+id/btnHard"
+        android:layout_alignRight="@+id/btnHard"
+        android:layout_below="@+id/btnHard"
+        android:text="@string/btnNinja" />
+
+
 </RelativeLayout>

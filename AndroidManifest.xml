@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.ufcg.es.ninjalarm.views.MainActivity"
+            android:name=".views.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,20 +23,25 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ufcg.es.ninjalarm.views.MyAlarmsActivity"
+            android:name=".views.MyAlarmsActivity"
             android:label="@string/title_activity_my_alarms"
-            android:parentActivityName = "com.ufcg.es.ninjalarm.views.MainActivity" >
+            android:parentActivityName=".views.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ufcg.es.ninjalarm.MainActivity" />
         </activity>
         <activity
-            android:name = "com.ufcg.es.ninjalarm.views.NewAlarmActivity"
-            android:label="@string/title_activity_new_alarm" 
-            android:parentActivityName="com.ufcg.es.ninjalarm.views.MyAlarmsActivity" >
+            android:name=".views.NewAlarmActivity"
+            android:label="@string/title_activity_new_alarm"
+            android:parentActivityName=".views.MyAlarmsActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ufcg.es.ninjalarm.MyAlarmsActivity" />
         </activity>
+        <activity
+            android:name="com.ufcg.es.ninjalarm.views.TrainingActivity"
+            android:label="@string/title_activity_training" >
+        </activity>
     </application>
+
 </manifest>

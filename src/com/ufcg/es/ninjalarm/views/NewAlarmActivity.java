@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.ufcg.es.ninjalarm.R;
+import com.ufcg.es.ninjalarm.controllers.Controller;
 import com.ufcg.es.ninjalarm.models.Alarm;
 import com.ufcg.es.ninjalarm.models.AlarmByDate;
 import com.ufcg.es.ninjalarm.models.AlarmDate;
@@ -37,6 +38,7 @@ public class NewAlarmActivity extends Activity {
 	private Alarm alarm;
 	private AlarmType alarmType;
 	private StopButton stopButton;
+	private Controller controller = Controller.getController();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -153,6 +155,8 @@ public class NewAlarmActivity extends Activity {
 				
 			}
 		});
+		
+		//TODO initialize text field for name
 			
 	}
 
@@ -232,6 +236,11 @@ public class NewAlarmActivity extends Activity {
 		
 		//TODO set alarm melody
 		
+		alarm.setStopButton(stopButton);
+		
+		//TODO set snooze time and power
+		
+		//TODO set name
 		
 		
 	}

@@ -1,10 +1,5 @@
 package com.ufcg.es.ninjalarm.views;
 
-import com.ufcg.es.ninjalarm.R;
-import com.ufcg.es.ninjalarm.R.id;
-import com.ufcg.es.ninjalarm.R.layout;
-import com.ufcg.es.ninjalarm.R.menu;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +7,8 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.ufcg.es.ninjalarm.R;
 
 public class MainActivity extends Activity {
 
@@ -26,6 +23,16 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent myAlarmsIntent = new Intent(MainActivity.this, MyAlarmsActivity.class);
 				startActivity(myAlarmsIntent);
+			}
+		});
+		
+		Button btnTraining = (Button) findViewById(R.id.btnTraining);
+		btnTraining.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent trainingIntent = new Intent(MainActivity.this, TrainingActivity.class);
+				startActivity(trainingIntent);				
 			}
 		});
 	}
