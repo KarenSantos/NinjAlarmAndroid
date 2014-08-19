@@ -1,18 +1,30 @@
 package com.ufcg.es.ninjalarm.views;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import com.ufcg.es.ninjalarm.R;
 import com.ufcg.es.ninjalarm.R.id;
 import com.ufcg.es.ninjalarm.R.layout;
 import com.ufcg.es.ninjalarm.R.menu;
+import com.ufcg.es.ninjalarm.controllers.Controller;
+import com.ufcg.es.ninjalarm.models.Alarm;
+import com.ufcg.es.ninjalarm.util.AlarmArrayAdapter;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.support.v4.app.NavUtils;
 
 public class MyAlarmsActivity extends Activity {
+
+	Controller controller = Controller.getController();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +32,16 @@ public class MyAlarmsActivity extends Activity {
 		setContentView(R.layout.activity_my_alarms);
 		// Show the Up button in the action bar.
 		setupActionBar();
+
+		final ListView listview = (ListView) findViewById(R.id.listAlarms);
+
+		final List<Alarm> list = new ArrayList<Alarm>();
+		for (int i = 0; i < controller.getAlarms().size(); i++) {
+			list.add(controller.getAlarms().get(i));
+		}
+		final AlarmArrayAdapter adapter = new AlarmArrayAdapter(this,
+				android.R.layout.simple_list_item_1, list);
+		listview.setAdapter(adapter);
 	}
 
 	/**

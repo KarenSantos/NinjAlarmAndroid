@@ -17,6 +17,7 @@ public class Controller {
 
 	private Training training;
 	private MyAlarms myAlarms;
+	private int tagForName;
 
 	/**
 	 * Creates a new NinjAlarm Controller.
@@ -24,6 +25,7 @@ public class Controller {
 	private Controller() {
 		training = new Training();
 		myAlarms = new MyAlarms();
+		tagForName = 1;
 	}
 
 	/**
@@ -262,6 +264,22 @@ public class Controller {
 	 */
 	public Alarm getNextAlarm() {
 		return myAlarms.getNextAlarm();
+	}
+
+	/**
+	 * Returns the tag for alarms with no name.
+	 * 
+	 * @return The tag for alarms with no name.
+	 */
+	public int getTagForName() {
+		return tagForName;
+	}
+
+	/**
+	 * Increments the tag for name when using alarm name default.
+	 */
+	public void incrementTagForName() {
+		this.tagForName++;
 	}
 
 }

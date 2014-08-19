@@ -28,5 +28,7 @@
     <string name="btnNormal">Normal</string>
     <string name="btnHard">Hard</string>
     <string name="btnNinja">Ninja</string>
+    <string name="bola">BOLA</string>
+    <string name="title_activity_ranking">Ranking</string>
 
 </resources>

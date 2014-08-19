@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ufcg.es.ninjalarm"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="46"
+    android:versionName="1.4.6" >
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="14" />
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -39,8 +41,16 @@
                 android:value="com.ufcg.es.ninjalarm.MyAlarmsActivity" />
         </activity>
         <activity
-            android:name="com.ufcg.es.ninjalarm.views.TrainingActivity"
+            android:name=".views.TrainingActivity"
             android:label="@string/title_activity_training" >
+        </activity>
+        <activity
+            android:name=".util.MovingBallExample"
+            android:label="@string/bola" >
+        </activity>
+        <activity
+            android:name=".RankingActivity"
+            android:label="@string/title_activity_ranking" >
         </activity>
     </application>
 

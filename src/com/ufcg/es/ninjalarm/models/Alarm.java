@@ -302,5 +302,14 @@ public abstract class Alarm implements Comparable<Alarm> {
 	public int compareTo(Alarm a) {
 		return this.getTime().changeToMinutes() - a.getTime().changeToMinutes();
 	}
+	
+	@Override
+	public String toString(){
+		String minute = getTime().getMinute() + "";
+		if (minute.length()==1){
+			minute = "0" + getTime().getMinute(); 
+		} 
+		return getTime().getHour() + ":" + minute + " - " + getName();
+	}
 
 }
