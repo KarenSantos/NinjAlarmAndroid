@@ -57,6 +57,7 @@ public class NewAlarmActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		Log.d("NewAlarm", "iniciou");
+//		controller.getController().getAlarmById((int) getIntent().getLongExtra("alarm", 0));
 
 		datePickerVisible = false;
 		isAlarmByDate = true;

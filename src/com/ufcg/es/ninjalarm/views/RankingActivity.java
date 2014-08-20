@@ -19,7 +19,6 @@ public class RankingActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ranking);
 		
-		ToggleButton btnStoggle = (ToggleButton) findViewById(R.id.bntS);		
 	}
 
 	@Override

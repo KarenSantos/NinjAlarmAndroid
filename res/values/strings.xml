@@ -34,5 +34,9 @@
     <string name="checkBoxRepeat">Repeat</string>
     <string name="btnS">S</string>
     <string name="btnTu">T</string>
+    <string name="empty"></string>
+    <string name="btnW">W</string>
+    <string name="btnTh">Th</string>
+    <string name="btnF">F</string>
 
 </resources>

@@ -8,50 +8,79 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ufcg.es.ninjalarm.views.RankingActivity" >
 
-    <LinearLayout
-        android:id="@+id/weekdaysArea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/listView1"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:id="@+id/buttonsDaysArea"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ToggleButton
-                android:id="@+id/bntS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/btnS"
-                android:textOff="S"
-                android:textOn="S" />
-
-            <ToggleButton
-                android:id="@+id/bntTu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/btnTu"
-                android:textOff="T"
-                android:textOn="T" />
-            
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/checkBoxRepeat" />
-    </LinearLayout>
-
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" >
     </ListView>
+
+    <LinearLayout
+        android:id="@+id/weekdaysArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/buttonsDaysArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ToggleButton
+            android:id="@+id/btnS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnS"
+            android:textOff="S"
+            android:textOn="S" />
+
+        <ToggleButton
+            android:id="@+id/btnTu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnS"
+            android:text="@string/btnTu"
+            android:textOff="T"
+            android:textOn="T" />
+        
+        <ToggleButton
+            android:id="@+id/btnW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnTu"
+            android:text="@string/btnW"
+            android:textOff="W"
+            android:textOn="W" />
+
+        <ToggleButton
+            android:id="@+id/btnTh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnW"
+            android:text="@string/btnTh"
+            android:textOff="T"
+            android:textOn="T" />
+
+
+        <ToggleButton
+            android:id="@+id/btnF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnTh"
+            android:text="@string/btnF"
+            android:textOff="F"
+            android:textOn="F" />
+
+
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonsDaysArea"
+        android:layout_below="@+id/buttonsDaysArea"
+        android:text="@string/checkBoxRepeat" />
 
 </RelativeLayout>

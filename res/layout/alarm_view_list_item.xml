@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/txtAlarmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/empty" />
+
+    <TextView
+        android:id="@+id/txtAlarmHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtAlarmName"
+        android:text="@string/empty"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/txtAlarmDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtAlarmHour"
+        android:text="@string/empty" />
+
+    <ToggleButton
+        android:id="@+id/btnAlarmPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtAlarmHour"
+        android:layout_alignBottom="@+id/txtAlarmHour"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

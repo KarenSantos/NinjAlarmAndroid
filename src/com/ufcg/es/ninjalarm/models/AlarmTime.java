@@ -128,4 +128,9 @@ public class AlarmTime {
 			this.minute = getMinute() + (totalMin - MAX_MINUTE);
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return getHour() + ":" + getMinute();
+	}
 }

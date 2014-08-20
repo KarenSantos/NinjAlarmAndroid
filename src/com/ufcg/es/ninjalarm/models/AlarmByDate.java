@@ -1,5 +1,7 @@
 package com.ufcg.es.ninjalarm.models;
 
+import java.util.Calendar;
+
 /**
  * Alarm by date class.
  * 

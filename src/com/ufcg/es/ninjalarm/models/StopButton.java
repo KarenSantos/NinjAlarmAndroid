@@ -21,6 +21,16 @@ public class StopButton {
 		direction = new Direction();
 		position = new Tuple(0, 0);
 	}
+	
+	/**
+	 * A standard StopButton begins with the level set as Normal, a default
+	 * direction and the zero position.
+	 */
+	public StopButton(Difficulty difficulty) {
+		level = difficulty;
+		direction = new Direction();
+		position = new Tuple(0, 0);
+	}
 
 	/**
 	 * Returns the stop button level

@@ -1,26 +1,23 @@
 package com.ufcg.es.ninjalarm.views;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+
 import com.ufcg.es.ninjalarm.R;
-import com.ufcg.es.ninjalarm.R.id;
-import com.ufcg.es.ninjalarm.R.layout;
-import com.ufcg.es.ninjalarm.R.menu;
 import com.ufcg.es.ninjalarm.controllers.Controller;
 import com.ufcg.es.ninjalarm.models.Alarm;
 import com.ufcg.es.ninjalarm.util.AlarmArrayAdapter;
-
-import android.os.Bundle;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.support.v4.app.NavUtils;
 
 public class MyAlarmsActivity extends Activity {
 
@@ -39,11 +36,21 @@ public class MyAlarmsActivity extends Activity {
 		for (int i = 0; i < controller.getAlarms().size(); i++) {
 			list.add(controller.getAlarms().get(i));
 		}
-		final AlarmArrayAdapter adapter = new AlarmArrayAdapter(this,
-				android.R.layout.simple_list_item_1, list);
+		final AlarmArrayAdapter adapter = new AlarmArrayAdapter(this, R.layout.alarm_view_list_item, list);
 		listview.setAdapter(adapter);
+		
+		listview.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int position, long arg) {
+				long alarmId = adapter.getItemId(position);
+				Intent editAlarm = new Intent(MyAlarmsActivity.this, NewAlarmActivity.class);
+				editAlarm.putExtra("alarm", alarmId);
+				startActivity(editAlarm);
+				finish();
+			}
+		});
 	}
-
+	
 	/**
 	 * Set up the {@link android.app.ActionBar}.
 	 */
