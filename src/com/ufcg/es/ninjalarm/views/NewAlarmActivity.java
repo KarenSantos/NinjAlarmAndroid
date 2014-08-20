@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnDragListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -65,8 +67,7 @@ public class NewAlarmActivity extends Activity {
 			alarmTime.setHour(alarmTime.getHour() + 1);
 		} catch (InvalidNumberException e) {
 			try {
-				alarmTime.setHour(0);
-				// TODO colocar data pra amanha
+				alarmTime.setMinute(alarmTime.getMinute() + 5);
 			} catch (InvalidNumberException e1) {
 			}
 		}
@@ -83,21 +84,34 @@ public class NewAlarmActivity extends Activity {
 		alarmName = "Alarm" + controller.getTagForName();
 
 		final LinearLayout dateOrWeekday = (LinearLayout) findViewById(R.id.dateOrWeekday);
-
+		
+		final LinearLayout datePickerArea = (LinearLayout) findViewById((R.id.datePickerArea));
+		
 		TextView txtByDate = (TextView) findViewById(R.id.txtByDate);
 		txtByDate.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				dateOrWeekday.setVisibility(View.GONE);
-
-				datePickerVisible = true;
+				
+				datePickerArea.setVisibility(View.VISIBLE);
 				alarmDatePicker = (DatePicker) findViewById(R.id.datePickerNewAlarm);
 				alarmDatePicker.setVisibility(View.VISIBLE);
 
+				datePickerVisible = true;
 			}
 		});
-
-		// TODO datePicker onPressed
+		
+		TextView txtCloseDatePicker = (TextView) findViewById(R.id.txtCloseDatePicker);
+		txtCloseDatePicker.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				datePickerArea.setVisibility(View.GONE);
+				dateOrWeekday.setVisibility(View.VISIBLE);
+				
+				datePickerVisible = false;
+			}
+		});
 
 		TextView txtByWeekdays = (TextView) findViewById(R.id.txtAlarmByWeekday);
 		txtByWeekdays.setOnClickListener(new OnClickListener() {
@@ -105,8 +119,6 @@ public class NewAlarmActivity extends Activity {
 			public void onClick(View v) {
 				dateOrWeekday.setVisibility(View.GONE);
 
-				alarmDatePicker = (DatePicker) findViewById(R.id.datePickerNewAlarm);
-				alarmDatePicker.setVisibility(View.VISIBLE);
 				isAlarmByDate = false;
 			}
 		});
@@ -240,17 +252,15 @@ public class NewAlarmActivity extends Activity {
 			}
 			controller.addAlarm(alarm);
 			Log.d("NewAlarm", "numAlarms = " + controller.getAlarms().size());
-
-			/*
-			 * Intent goAlarm = new Intent(this, MyAlarmsActivity.class);
-			 * goAlarm.putExtra(alarm.getName(), alarm.toString());
-			 * startActivityForResult(goAlarm, MyAlarmsActivity.getPick());
-			 */
-			// ///////////////////////////////////
-
+			
+			Intent myAlarms = new Intent(this, MyAlarmsActivity.class);
+			startActivity(myAlarms);
+			
+			finish();
+			break;
 		case R.id.cancelNewAlarmIcon:
-			Intent intentMyAlarms = new Intent(this, MyAlarmsActivity.class);
-			startActivity(intentMyAlarms);
+			finish();
+			break;
 		}
 		return super.onOptionsItemSelected(item);
 	}

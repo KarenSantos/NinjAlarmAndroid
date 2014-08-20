@@ -6,13 +6,52 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ufcg.es.ninjalarm.RankingActivity" >
+    tools:context="com.ufcg.es.ninjalarm.views.RankingActivity" >
+
+    <LinearLayout
+        android:id="@+id/weekdaysArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/listView1"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/buttonsDaysArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ToggleButton
+                android:id="@+id/bntS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btnS"
+                android:textOff="S"
+                android:textOn="S" />
+
+            <ToggleButton
+                android:id="@+id/bntTu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btnTu"
+                android:textOff="T"
+                android:textOn="T" />
+            
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkBoxRepeat" />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
     </ListView>
 
 </RelativeLayout>

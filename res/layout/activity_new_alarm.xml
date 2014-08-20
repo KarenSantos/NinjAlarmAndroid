@@ -15,11 +15,14 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/txtVolume"
+            android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/time"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:textAppearance="?android:attr/textAppearanceSmall" >
+            
+            <requestFocus />
+        </TextView>
 
         <TimePicker
             android:id="@+id/timePickerNewAlarm"
@@ -72,15 +75,45 @@
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
 
-        <DatePicker
-            android:id="@+id/datePickerNewAlarm"
+        <LinearLayout
+            android:id="@+id/datePickerArea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:calendarViewShown="false"
-            android:spinnersShown="true"
-            android:visibility="gone" />
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/txtCloseDatePicker"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtCloseDatePicker"
+                android:gravity="right"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <DatePicker
+                android:id="@+id/datePickerNewAlarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:calendarViewShown="false"
+                android:spinnersShown="true"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/weekdayArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/alarmTypeArea"
@@ -105,7 +138,7 @@
             android:background="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/txtVolume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/volume"
@@ -116,7 +149,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:progress="50" />
         
         <View
             android:layout_width="fill_parent"
@@ -212,7 +246,6 @@
             android:hint="@string/nameHint"
             android:text="@string/txtFieldAlarmName" >
 
-            <requestFocus />
         </EditText>
         
     </LinearLayout>

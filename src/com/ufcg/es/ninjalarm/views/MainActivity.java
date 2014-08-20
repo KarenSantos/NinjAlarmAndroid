@@ -36,6 +36,16 @@ public class MainActivity extends Activity {
 				startActivity(trainingIntent);
 			}
 		});
+		
+		Button btnRanking = (Button) findViewById(R.id.btnRanking);
+		btnRanking.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent rankingIntent = new Intent(MainActivity.this, RankingActivity.class);
+				startActivity(rankingIntent);				
+			}
+		});
 	}
 
 	@Override

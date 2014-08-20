@@ -76,6 +76,7 @@ public class MyAlarmsActivity extends Activity {
 		case R.id.newAlarmIcon:
 			Intent intentNewAlarm = new Intent(this, NewAlarmActivity.class);
 			startActivity(intentNewAlarm);
+			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
